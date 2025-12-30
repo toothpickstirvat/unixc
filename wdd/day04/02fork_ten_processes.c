@@ -8,6 +8,11 @@ int main()
     for(int i = 0; i < 10; i++)
     {
         pid_t pid = fork();
+        if (pid == -1)
+        {
+            perror("fork");
+            return -1;
+        }
         if (pid == 0)
         {
             // child process

@@ -10,6 +10,11 @@ int main()
     int* p = (int*)malloc(4);
     *p = 100;
     pid_t pid = fork();
+    if (pid == -1)
+    {
+        perror("fork");
+        return -1;
+    }
     if (pid == 0)
     {
         printf("[Child] p=%p, *p=%d\n", p, *p);

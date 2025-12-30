@@ -14,6 +14,11 @@ int main()
         return -1;
     }
     pid_t pid = fork();
+    if (pid == -1)
+    {
+        perror("fork");
+        return -1;
+    }
     if (pid == 0)
     {
         // child process

@@ -9,10 +9,9 @@ int main()
 
     if (pid == -1)
     {
-        printf("fork failed\n");
+        perror("fork");
         return -1;
     }
-
     if (pid == 0)
     {
         // child process
