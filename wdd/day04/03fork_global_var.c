@@ -23,8 +23,7 @@ int main()
         getchar();
         printf("[Parent] g = %d, [%p]\n", g, &g);
     }
-    
-    for(;;);
+
 
     return 0;
 }
