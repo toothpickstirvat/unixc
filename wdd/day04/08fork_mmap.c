@@ -15,9 +15,9 @@ int main()
         return -1;
     }
     ftruncate(fd, 4096);
+
     //匿名映射
     //void* p = mmap(NULL, 4096, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, 0, 0);
-    
     void* p = mmap(NULL, 4096, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     if (p == NULL)
     {
